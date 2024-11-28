@@ -25,7 +25,7 @@ class PersonController extends Controller
     }
 
     public function createPerson(){
-        $genders = Gender::all();
+        $genders = Gender::all()->unique('gender');
         return view('createPerson',compact('genders'));
     }
 }
